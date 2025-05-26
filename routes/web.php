@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\CitizenController;
 use App\Http\Controllers\ReportCitizenController;
+use App\Http\Controllers\viewgroupcontroller;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,6 +30,7 @@ route::middleware('auth')->group(function () {
     Route::resource(('citizens'), CitizenController::class);
     Route::resource(('cities'), CityController::class);
     Route::get('report', [ReportCitizenController::class, 'send_report'])->name('reports');
+    Route::get('viewgroup', [viewgroupcontroller::class, 'index'])->name('viewgroup');
 });
 
 // Route::get('/cities', [CityController::class, 'index'])->name('cities.index');
