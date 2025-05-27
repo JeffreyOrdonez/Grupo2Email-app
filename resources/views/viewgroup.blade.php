@@ -4,6 +4,24 @@
             Ciudadanos agrupados por ciudad
         </h2>
     </x-slot>
+<!-- filepath: resources/views/viewgroup.blade.php -->
+<form method="GET" action="{{ route('viewgroup') }}" class="mb-6 flex flex-col md:flex-row gap-2 items-center">
+    <input
+        type="text"
+        name="search"
+        value="{{ request('search') }}"
+        placeholder="Buscar..."
+        class="px-4 py-2 border rounded w-full md:w-auto"
+    >
+    <select name="tipo" class="px-2 py-2 border rounded">
+        <option value="ciudad" {{ request('tipo') == 'ciudad' ? 'selected' : '' }}>Buscar por ciudad</option>
+        <option value="ciudadano" {{ request('tipo') == 'ciudadano' ? 'selected' : '' }}>Buscar por ciudadano</option>
+    </select>
+    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+        Buscar
+    </button>
+</form>
+    
 
     <div class="py-8 max-w-3xl mx-auto">
         <div class="space-y-4">

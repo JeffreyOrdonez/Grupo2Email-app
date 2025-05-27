@@ -1,4 +1,23 @@
 <x-app-layout>
+
+@if(session('error'))
+    <div 
+        x-data="{ open: true }" 
+        x-show="open" 
+        class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50"
+    >
+        <div class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
+            <h2 class="text-xl font-bold mb-4 text-red-600">¡Advertencia!</h2>
+            <p class="mb-6 text-gray-700">{{ session('error') }}</p>
+            <button 
+                @click="open = false" 
+                class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+            >
+                Cerrar
+            </button>
+        </div>
+    </div>
+@endif
     <x-slot name="header">
         <div class="flex justify-between items-center">
             <h2 class="font-semibold text-2xl text-white leading-tight">
