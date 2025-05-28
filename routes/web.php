@@ -7,6 +7,7 @@ use App\Http\Controllers\CitizenController;
 use App\Http\Controllers\ReportCitizenController;
 use App\Http\Controllers\viewgroupcontroller;
 use App\Http\Controllers\dashboardcontroller;
+use App\Http\Controllers\ReportGroupcontroller;
 
 Route::get('/', function () {
     return view('welcome');

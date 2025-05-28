@@ -12,7 +12,7 @@ class viewgroupcontroller extends Controller
     {  $search = $request->input('search');
         $tipo = $request->input('tipo','ciudad'); 
 
-         if ($tipo == 'ciudadano'){
+        if ($tipo == 'ciudadano'){
         $ciudades = City::with(['citizens' => function ($query) use ($search){
 
             if($search){
