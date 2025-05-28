@@ -8,10 +8,11 @@
     <title>Document</title>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
         body {
-            background: #f3f4f6;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #1f2937;
+            background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #1e293b;
             margin: 0;
             padding: 0;
         }
@@ -20,26 +21,62 @@
             max-width: 600px;
             margin: 40px auto;
             background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 24px rgba(31, 41, 55, 0.08);
-            padding: 32px 24px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(37, 99, 235, 0.10);
+            padding: 40px 32px;
+            border: 1px solid #e5e7eb;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: #2563eb;
-            margin-bottom: 16px;
-            letter-spacing: 1px;
+            margin-bottom: 20px;
+            letter-spacing: 1.5px;
             text-align: center;
         }
 
-        p {
+        .subtitle {
             font-size: 1.1rem;
-            line-height: 1.7;
-            margin: 0;
-            color: #374151;
+            color: #64748b;
             text-align: center;
+            margin-bottom: 28px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background: #f9fafb;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 14px 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #2563eb;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        tr:nth-child(even) {
+            background: #e0e7ff;
+        }
+
+        tr:nth-child(odd) {
+            background: #f3f4f6;
+        }
+
+        .footer {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-top: 32px;
         }
     </style>
 </head>

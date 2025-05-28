@@ -6,14 +6,14 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\CitizenController;
 use App\Http\Controllers\ReportCitizenController;
 use App\Http\Controllers\viewgroupcontroller;
+use App\Http\Controllers\dashboardcontroller;
+use App\Http\Controllers\ReportGroupcontroller;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [dashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
