@@ -31,6 +31,7 @@ route::middleware('auth')->group(function () {
     Route::resource(('cities'), CityController::class);
     Route::get('report', [ReportCitizenController::class, 'send_report'])->name('reports');
     Route::get('viewgroup', [viewgroupcontroller::class, 'index'])->name('viewgroup');
+    Route::get('reportgroup', [ReportGroupcontroller::class, 'send_report'])->name('reportgroup');
 });
 
 // Route::get('/cities', [CityController::class, 'index'])->name('cities.index');

@@ -1,10 +1,25 @@
 <x-app-layout>
     <x-slot name="header">
+    @if(session('success'))
+    <div class="mb-4 px-4 py-3 rounded bg-green-100 text-green-800">
+        {{ session('success') }}
+    </div>
+@endif
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             Ciudadanos agrupados por ciudad
         </h2>
     </x-slot>
-<!-- filepath: resources/views/viewgroup.blade.php -->
+
+<div class="mb-6 flex">
+    <form action="{{ route('reportgroup') }}" method="GET">
+        <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition">
+            Enviar reporte por correo
+        </button>
+    </form>
+</div>
+
+    
+
 <form method="GET" action="{{ route('viewgroup') }}" class="mb-6 flex flex-col md:flex-row gap-2 items-center">
     <input
         type="text"
@@ -12,7 +27,8 @@
         value="{{ request('search') }}"
         placeholder="Buscar..."
         class="px-4 py-2 border rounded w-full md:w-auto"
-    >
+>
+
     <select name="tipo" class="px-2 py-2 border rounded">
         <option value="ciudad" {{ request('tipo') == 'ciudad' ? 'selected' : '' }}>Buscar por ciudad</option>
         <option value="ciudadano" {{ request('tipo') == 'ciudadano' ? 'selected' : '' }}>Buscar por ciudadano</option>
@@ -21,7 +37,7 @@
         Buscar
     </button>
 </form>
-    
+  
 
     <div class="py-8 max-w-3xl mx-auto">
         <div class="space-y-4">
@@ -47,4 +63,6 @@
             @endforeach
         </div>
     </div>
+
+    
 </x-app-layout>
