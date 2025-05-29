@@ -10,16 +10,23 @@
         </h2>
     </x-slot>
 
-<div class="mb-6 flex">
+<div class="mb-6 flex gap-4 justify-center">
     <form action="{{ route('reportgroup') }}" method="GET">
         <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition">
             Enviar reporte por correo
         </button>
     </form>
+    <a href="{{ url('/export/xls') }}"
+       class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition font-semibold shadow">
+        Exportar a Excel
+    </a>
+    <a href="{{ url('/export/csv') }}"
+       class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition font-semibold shadow">
+        Exportar a CSV
+    </a>
 </div>
-
     
-
+<dev class = " mb-6 flex gab-4 justify-center">
 <form method="GET" action="{{ route('viewgroup') }}" class="mb-6 flex flex-col md:flex-row gap-2 items-center">
     <input
         type="text"
@@ -37,7 +44,8 @@
         Buscar
     </button>
 </form>
-  
+</dev>
+
 
     <div class="py-8 max-w-3xl mx-auto">
         <div class="space-y-4">
@@ -63,6 +71,7 @@
             @endforeach
         </div>
     </div>
+
 
     
 </x-app-layout>

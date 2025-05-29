@@ -8,6 +8,7 @@ use App\Http\Controllers\ReportCitizenController;
 use App\Http\Controllers\viewgroupcontroller;
 use App\Http\Controllers\dashboardcontroller;
 use App\Http\Controllers\ReportGroupcontroller;
+use App\Http\Controllers\ExportController;
 
 
 Route::get('/', function () {
@@ -34,6 +35,8 @@ route::middleware('auth')->group(function () {
     Route::get('viewgroup', [viewgroupcontroller::class, 'index'])->name('viewgroup');
     Route::get('reportgroup', [ReportGroupcontroller::class, 'send_report'])->name('reportgroup');
     Route::get('/export/ciudades-ciudadanos', [ReporterGroupcontroller::class, 'citiesExport']);
+    Route::get('/export/xls', [ExportController::class, 'exportXLS']);
+    Route::get('/export/csv', [ExportController::class, 'exportCSV']);
 
 });
 
