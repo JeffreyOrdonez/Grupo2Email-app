@@ -9,6 +9,7 @@ use App\Http\Controllers\viewgroupcontroller;
 use App\Http\Controllers\dashboardcontroller;
 use App\Http\Controllers\ReportGroupcontroller;
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -32,6 +33,8 @@ route::middleware('auth')->group(function () {
     Route::get('report', [ReportCitizenController::class, 'send_report'])->name('reports');
     Route::get('viewgroup', [viewgroupcontroller::class, 'index'])->name('viewgroup');
     Route::get('reportgroup', [ReportGroupcontroller::class, 'send_report'])->name('reportgroup');
+    Route::get('/export/ciudades-ciudadanos', [ReporterGroupcontroller::class, 'citiesExport']);
+
 });
 
 // Route::get('/cities', [CityController::class, 'index'])->name('cities.index');
